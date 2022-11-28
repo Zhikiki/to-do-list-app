@@ -14,9 +14,12 @@ function newItem() {
     return alert('You must write something!');
   } else {
     toDoList.append(toDoListItem);
+    
   }
 
   toDoListItem.append(userInputValue);
+
+  $('#input').val("");
 
   toDoListItem.on('dblclick', function () {
     toDoListItem.toggleClass('strike');
