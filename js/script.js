@@ -25,11 +25,18 @@ function newItem() {
   let deleteItemButton = $('<crossOutButton></crossOutButton>');
   deleteItemButton.append(document.createTextNode('X'));
   toDoListItem.append(deleteItemButton);
-  deleteItemButton.on('click', function() {
+  deleteItemButton.on('click', function () {
     toDoListItem.addClass('delete');
   });
-  
-   toDoList.sortable();
+
+  toDoList.sortable();
 
   // How to remove the value of input after user pressed "Add"
 }
+
+$('#form').on('keydown', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    newItem();
+  }
+});
