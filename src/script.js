@@ -1,25 +1,17 @@
-// eventListener is already integrated in index.html and connected with
-// Add button id="button"
-// we create function that will add to a list value of input
-
 function newItem() {
-  // alert('hello');
-  let toDoList = $('#list'); // alternative document.querySelector for ordered list
+  let toDoList = $('#list');
   let toDoListItem = $('<li></li>');
-
-  // We put li to ordered list
   let userInputValue = $('#input').val();
 
   if (userInputValue === '') {
     return alert('You must write something!');
   } else {
     toDoList.append(toDoListItem);
-    
   }
 
   toDoListItem.append(userInputValue);
 
-  $('#input').val("");
+  $('#input').val('');
 
   toDoListItem.on('dblclick', function () {
     toDoListItem.toggleClass('strike');
@@ -33,8 +25,6 @@ function newItem() {
   });
 
   toDoList.sortable();
-
-  // How to remove the value of input after user pressed "Add"
 }
 
 $('#form').on('keydown', function (e) {
